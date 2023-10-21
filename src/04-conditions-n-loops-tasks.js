@@ -379,8 +379,8 @@ function isBracketsBalanced(/* str */) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(/* num, n */) {
-  throw new Error('Not implemented');
+function toNaryString(num, n) {
+  return num.toString(n);
 }
 
 
@@ -454,8 +454,38 @@ function getMatrixProduct(/* m1, m2 */) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(/* position */) {
-  throw new Error('Not implemented');
+function evaluateTicTacToePosition(pos) {
+  const win = ['X', '0'];
+
+  for (let i = 0; i < pos.length; i += 1) {
+    for (let j = 0; j < pos[i].length; j += 1) {
+      if (pos[0][0] === `${win[i]}` && pos[0][1] === `${win[i]}` && pos[0][2] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+      if (pos[1][0] === `${win[i]}` && pos[1][1] === `${win[i]}` && pos[1][2] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+      if (pos[2][0] === `${win[i]}` && pos[2][1] === `${win[i]}` && pos[2][2] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+      if (pos[0][0] === `${win[i]}` && pos[1][1] === `${win[i]}` && pos[2][2] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+      if (pos[0][2] === `${win[i]}` && pos[1][1] === `${win[i]}` && pos[2][0] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+      if (pos[0][0] === `${win[i]}` && pos[1][0] === `${win[i]}` && pos[2][0] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+      if (pos[0][1] === `${win[i]}` && pos[1][1] === `${win[i]}` && pos[2][1] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+      if (pos[0][2] === `${win[i]}` && pos[1][2] === `${win[i]}` && pos[2][2] === `${win[i]}`) {
+        return (`${win[i]}`);
+      }
+    }
+  }
+  return undefined;
 }
 
 
