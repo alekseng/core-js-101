@@ -35,17 +35,16 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  // const arr = [1];
-  // arr.map((el) => {
-  //   if (arr.length < len) {
-  //    return arr.push(el + 2);
-  //   }
-  // });
-  // return arr;
-  throw new Error('Not implemented');
-  // const arr = [];
-  // return arr.fill(2, 1, len);
+function generateOdds(len) {
+  const arr = new Array(len).fill(1);
+  const result = [];
+  let n = 1;
+  arr.reduce((acc, el) => {
+    result.push(el + acc);
+    n = 2;
+    return acc + n;
+  }, 0);
+  return result;
 }
 
 
